@@ -1,7 +1,7 @@
 // checking if local storage is empty
 if (localStorage.getItem('Added Books') === null) {
-    localStorage.setItem('Added Books', JSON.stringify([]));
-  }
+  localStorage.setItem('Added Books', JSON.stringify([]));
+}
 // store book
 const storeData = JSON.parse(localStorage.getItem('Added Books'));
 function updateBook() {
