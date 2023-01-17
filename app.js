@@ -45,7 +45,6 @@ function removeBook(i) {
   updateBook();
   DispayAwesomeBooks();
 }
-removeBook();
 
 // Getting values from input fields
 const form = document.querySelector('form');
