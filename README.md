@@ -13,10 +13,6 @@
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -69,62 +65,32 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> clone the repo
+Creating your "Awesome book" project
+
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
-
-
-
-```sh
- git clone (repo name) 
-```
- 
+<ul>
+-A Git hub account
+-Git bash
+-Node JS
+-Visual Studio Code as your code editor
+-Figma account
+</ul> 
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```sh
- git clone (repo name) 
+  cd my-folder
+  git clone[ (https://github.com/kazaneza/awesome-book.git)]
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
  
-
-### Install
-
-Install this project with:
-
-```sh
- git clone (repo name) 
-```
- 
-
-### Usage
-
-To run the project, execute the following command:
-
-```sh
- git clone (repo name) 
-```
- 
-
-### Run tests
-
-To run tests, run the following command:
-
-```sh
- open in browser 
-```
- 
-
-### Deployment
-
-You can deploy this project using:
-
-```sh
- open in browser 
-```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
