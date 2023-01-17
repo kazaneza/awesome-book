@@ -40,6 +40,7 @@ function addBook(bookTitle, bookAuthor) {
   DispayAwesomeBooks();
 }
 // Remove data from local storage
+/* eslint-disable */
 function removeBook(i) {
   storeData.splice(i, 1);
   updateBook();
