@@ -88,6 +88,25 @@ Clone this repository to your desired folder:
   cd my-folder
   git clone[ (https://github.com/kazaneza/awesome-book.git)]
 ```
+### Install
+
+### Usage
+
+### Run Tests
+
+Clone this repository to your desired folder:
+
+```sh
+  Open in VS code or any browser
+```
+
+### DEPLOY
+
+Clone this repository to your desired folder:
+
+```sh
+  Open with git pages.
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
  
@@ -113,6 +132,17 @@ Clone this repository to your desired folder:
 - LinkedIn: [soliman](https://linkedin.com/in/linkedinhandle)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Future Features <a name="Future-features"></a>
+
+> features you will add to the project.
+
+- **[Adding_styles]**
+- **[Adding_navigation_links]**
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+ 
 
 <!-- CONTRIBUTING -->
 
