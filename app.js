@@ -1,9 +1,43 @@
+/* eslint max-classes-per-file: ["error", 10] */
+
 // book class
-/* eslint-disable */
+
 class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
+  }
+}
+
+// Store class: handles storage
+
+class Store {
+  static getBooks() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+    return books;
+  }
+
+  static addBook(book) {
+    const books = Store.getBooks();
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static removeBook(author) {
+    const books = Store.getBooks();
+
+    books.forEach((book, index) => {
+      if (book.author === author) {
+        books.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem('books', JSON.stringify(books));
   }
 }
 
@@ -49,37 +83,6 @@ class UI {
   }
 }
 
-// Store class: handles storage
-class Store {
-  static getBooks() {
-    let books;
-    if (localStorage.getItem('books') === null) {
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem('books'));
-    }
-    return books;
-  }
-
-  static addBook(book) {
-    const books = Store.getBooks();
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-
-  static removeBook(author) {
-    const books = Store.getBooks();
-
-    books.forEach((book, index) => {
-      if (book.author === author) {
-        books.splice(index, 1);
-      }
-    });
-
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-}
-
 // event display books
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
@@ -94,22 +97,19 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   const author = document.querySelector('.author').value;
 
   // validate
-  if (title === '' || author === '') {
-    alert('Please fill in all fields');
-  } else {
-    // instatiate book
-    const book = new Book(title, author);
 
-    // add to ui
+  // instatiate book
+  const book = new Book(title, author);
 
-    UI.addBookToList(book);
+  // add to ui
 
-    // add book to store
-    Store.addBook(book);
+  UI.addBookToList(book);
 
-    // clear fields.
-    UI.clearFields();
-  }
+  // add book to store
+  Store.addBook(book);
+
+  // clear fields.
+  UI.clearFields();
 });
 
 // event: Remove a Book
