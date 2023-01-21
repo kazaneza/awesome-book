@@ -1,121 +1,154 @@
-/* eslint max-classes-per-file: ["error", 10] */
+/* eslint-disable */
+const data = document.querySelector("#data");
 
-// book class
-
+// Book class: Represent a book
 class Book {
-  constructor(title, author) {
+  constructor(title, authore) {
     this.title = title;
-    this.author = author;
+    this.authore = authore;
   }
 }
 
-// Store class: handles storage
-
-class Store {
-  static getBooks() {
-    let books;
-    if (localStorage.getItem('books') === null) {
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem('books'));
-    }
-    return books;
-  }
-
-  static addBook(book) {
-    const books = Store.getBooks();
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-
-  static removeBook(author) {
-    const books = Store.getBooks();
-
-    books.forEach((book, index) => {
-      if (book.author === author) {
-        books.splice(index, 1);
-      }
-    });
-
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-}
-
-// UI Class: handle UI tasks
-
+// UI Class: Handle UI Tasks
 class UI {
   static displayBooks() {
-    const books = Store.getBooks();
+    const books = store.getBooks();
 
     books.forEach((book) => UI.addBookToList(book));
   }
 
   static addBookToList(book) {
-    const list = document.querySelector('.book');
+    const list = document.querySelector("#data");
 
-    const row = document.createElement('tr');
+    const div = document.createElement("div");
+    div.className = "data-container";
 
-    row.innerHTML = `
-        <div class="book-details">
-        
+    div.innerHTML = `
         <p>"${book.title}"</p>
         <p>by</p>
-        <p>${book.author}</p>
-       
-       
-        <button><a href="#" class="button">remove</a></button>
-        
-        </div>
-        `;
+        <p>${book.authore}</p>
+        <div><button id="remove-btn" class='delete'>Remove</button></div>
+     `;
 
-    list.appendChild(row);
+    list.appendChild(div);
   }
 
   static deleteBook(el) {
-    if (el.classList.contains('button')) {
+    if (el.classList.contains("delete")) {
       el.parentElement.parentElement.remove();
     }
   }
 
-  static clearFields() {
-    document.querySelector('.title').value = '';
-    document.querySelector('.author').value = '';
+  static clearField() {
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
   }
 }
 
-// event display books
+// store data in local storage
+class store {
+  static getBooks() {
+    let books;
+    if (localStorage.getItem("books") === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem("books"));
+    }
+    return books;
+  }
 
-document.addEventListener('DOMContentLoaded', UI.displayBooks);
+  static addBook(book) {
+    const books = store.getBooks();
 
-// event add a book
+    books.push(book);
 
-document.querySelector('#book-form').addEventListener('submit', (e) => {
-  // prevent actual submit
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+
+  static removeBook(authore) {
+    const books = store.getBooks();
+    books.forEach((book, index) => {
+      if (book.authore === authore) {
+        books.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+}
+
+//  Event for display books
+document.addEventListener("DOMContentLoaded", UI.displayBooks);
+
+// Add event listener to the add button
+document.querySelector("#form").addEventListener("submit", (e) => {
+  // Prevent actual submit
   e.preventDefault();
-  // get form values
-  const title = document.querySelector('.title').value;
-  const author = document.querySelector('.author').value;
+  const title = document.querySelector("#title").value;
+  const authore = document.querySelector("#author").value;
 
-  // validate
+  // Instatiate book
+  const book = new Book(title, authore);
 
-  // instatiate book
-  const book = new Book(title, author);
-
-  // add to ui
-
+  // Add book data to screen
   UI.addBookToList(book);
 
-  // add book to store
-  Store.addBook(book);
+  // Add book to store
+  store.addBook(book);
 
-  // clear fields.
-  UI.clearFields();
+  // clear fields
+  UI.clearField();
 });
 
-// event: Remove a Book
-document.querySelector('.book').addEventListener('click', (e) => {
+// Event to remove books
+document.querySelector("#data").addEventListener("click", (e) => {
+  // Remove book from UI
   UI.deleteBook(e.target);
-
-  // Remove book from store
-  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+  // Remove book from local storage
+  store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
+
+// Navigation section start here
+document.getElementById("list").addEventListener("click", () => {
+  showList();
+});
+document.getElementById("add").addEventListener("click", () => {
+  showAdd();
+});
+document.getElementById("cont").addEventListener("click", () => {
+  showContact();
+});
+
+function defaultDisplay() {
+  document.getElementById("diplay-list").setAttribute("class", "non-show");
+  document.getElementById("input-data").setAttribute("class", "show");
+  document.getElementById("contact").setAttribute("class", "non-show");
+  document.getElementById("footer").setAttribute("class", "show");
+}
+defaultDisplay();
+
+function showList() {
+  document.getElementById("diplay-list").setAttribute("class", "show");
+  document.getElementById("input-data").setAttribute("class", "non-show");
+  document.getElementById("contact").setAttribute("class", "non-show");
+}
+
+function showAdd() {
+  document.getElementById("diplay-list").setAttribute("class", "non-show");
+  document.getElementById("input-data").setAttribute("class", "show");
+  document.getElementById("contact").setAttribute("class", "non-show");
+}
+
+function showContact() {
+  document.getElementById("diplay-list").setAttribute("class", "non-show");
+  document.getElementById("input-data").setAttribute("class", "non-show");
+  document.getElementById("contact").setAttribute("class", "show");
+}
+
+document.write(new Date().getFullYear());
+
+function ondate() {
+  document.querySelector(".date").innerHTML = Date();
+}
+
+ondate();
