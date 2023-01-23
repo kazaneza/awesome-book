@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {
   margin: 0;
@@ -7,11 +7,8 @@
 }
 
 body {
-  background-image: url(bg.jpg);
-  background-repeat: no-repeat;
-  background-position: inherit;
-  background-size: cover;
-  font-family: "Roboto", sans-serif;
+  
+  font-family: "Lato", sans-serif;
 }
 
 h1 {
@@ -34,7 +31,7 @@ h1 {
   height: 50vh;
 }
 
-.data-container {
+.data-cont {
   box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
   background-color: white;
   display: flex;
@@ -58,16 +55,16 @@ h1 {
 
 #title {
   padding: 5px 15px;
-  border: 2px solid black;
+  border: 2px solid #565656;
 }
 
 #author {
   padding: 5px 15px;
-  border: 2px solid black;
+  border: 2px solid #565656;
 }
 
 #submit {
-  background: cornflowerblue;
+  background: #ee6330;
   cursor: pointer;
   padding: 5px 15px;
   border: 2px solid black;
@@ -85,7 +82,7 @@ h1 {
 }
 
 #remove-btn:hover {
-  background-color: #0e3f6a;
+  background-color: #f56d1e;
   color: white;
 }
 
@@ -97,6 +94,7 @@ h1 {
   justify-content: flex-end;
   background: white;
   padding-right: 150px;
+  z-index: 98;
 }
 
 .nav {
@@ -104,11 +102,11 @@ h1 {
   padding: 10px 30px;
   cursor: pointer;
   margin-right: 10px;
-  border: 1px solid #0e3f6a;
+  border: 1px solid #ee6330;
 }
 
 .nav:hover {
-  background-color: #0e3f6a;
+  background-color: #ee6330;
   color: white;
 }
 
@@ -125,7 +123,7 @@ h1 {
   display: none;
 }
 
-.contact-txt {
+.contact-text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,9 +134,9 @@ h1 {
   padding-bottom: 200px;
 }
 
-.contact-heading {
+.contact-header {
   margin-bottom: 20px;
-  color: #0e3f6a;
+  color: #fff;
 }
 
 #footer {
@@ -158,4 +156,5 @@ h1 {
   margin-top: 10px;
   margin-right: 100px;
   font-size: 20px;
+  color: #fff;
 }
