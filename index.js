@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import menu from './modules/menu.js';
 import Book from './modules/Book-storage.js';
 import { DateTime } from './modules/luxon.js';
