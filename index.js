@@ -1,4 +1,5 @@
 import menu from './modules/menu.js';
+// eslint-disable-next-line import/no-unresolved
 import Book from './modules/BookStorage.js';
 import { DateTime } from './modules/luxon.js';
 import storebooks from './modules/storebooks.js';
