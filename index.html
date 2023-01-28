@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Books</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- Header and navigation section -->
+    <header class="header">
+      <nav class="nav-container">
+        <div class="heading">
+          <h2 id="top-heading">Awesome books</h2>
+        </div>
+        <li class="nav" id="list">List</li>
+        <li class="nav" id="add">Add new</li>
+        <li class="nav" id="cont">Contact</li>
+      </nav>
+    </header>
+    <div class="time">
+      <div class="container">
+        <p class="date" id="timeText"></p>
+      </div>
+    </div>
+        <!-- display Books -->
+    <section id="diplay-list">
+      <h1>All Awesome Books</h1>
+      <div id="data" class="data"></div>
+    </section>
+    <section id="input-data">
+      <form id="form">
+        <h2 class="input">Add a new book</h2>
+        <input id="title" type="text" placeholder="Title" required /><br />
+        <br />
+        <input id="author" type="text" placeholder="Author" required /><br />
+        <br />
+        <input id="submit" type="submit" value="Add" class="submit" />
+      </form>
+    </section>
+    <section id="contact">
+      <div class="contact-text">
+        <h2 class="contact-header">Contact information</h2>
+        <p>
+          Do you have any qusetions or you just want to say "Hello"?<br />You can
+          reach out to us!
+        </p>
+        <ul>
+          <li>Our E-mail: <a href="kazanezagentil@gmail.com">kazanezagentil@gmail.com</a></li>
+          <li>Our phone number: +250 781 184 618</li>
+          <li>Our address: kigali, Rwanda. </li>
+        </ul>
+      </div>
+    </section>
+    <footer id="footer">
+      <p>Copyright All rights reserved</p>
+    </footer>
+    <script  src="./index.js" type="module"></script>
+    <script  src="./modules/menu.js" ></script>
+  </body>
 </html>
+
