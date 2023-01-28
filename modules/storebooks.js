@@ -17,10 +17,10 @@ export default class storebooks {
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  static removeBook(authore) {
+  static removeBook(author) {
     const books = storebooks.getBooks();
     books.forEach((book, index) => {
-      if (book.authore === authore) {
+      if (book.author === author) {
         books.splice(index, 1);
       }
     });
