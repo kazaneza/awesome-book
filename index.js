@@ -1,5 +1,5 @@
 import menu from './modules/menu.js';
-import Book from './modules/Book-storage.js';
+import Book from './modules/BookStorage.js';
 import { DateTime } from './modules/luxon.js';
 import storebooks from './modules/storebooks.js';
 
